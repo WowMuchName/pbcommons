@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "net.pbforge"
-version = "1.0.0-SNAPSHOT"
+version = "0.0.1-SNAPSHOT"
 val kotest = "4.3.1"
 
 repositories {
