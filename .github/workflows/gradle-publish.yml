@@ -3,7 +3,8 @@
 
 name: Gradle Package
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
 
 jobs:
   build:
