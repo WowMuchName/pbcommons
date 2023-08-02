@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.10"
+    kotlin("jvm") version "1.8.22"
     `maven-publish`
 }
 
@@ -45,11 +45,16 @@ dependencies {
     implementation("org.bouncycastle:bctls-jdk15on:$bouncy")
 }
 
-tasks.test {
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+
 tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.jvmTarget = "17"
     kotlinOptions.freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
 }
