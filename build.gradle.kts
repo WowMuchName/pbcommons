@@ -26,6 +26,7 @@ publishing {
 group = "net.pbforge"
 version = "0.0.1-SNAPSHOT"
 val kotest = "4.3.1"
+val bouncy = "1.69"
 
 repositories {
     mavenCentral()
@@ -37,6 +38,11 @@ dependencies {
     testImplementation("io.kotest:kotest-runner-junit5:$kotest")
     testImplementation("io.kotest:kotest-assertions-core:$kotest")
     testImplementation("io.kotest:kotest-property:$kotest")
+
+    // Bouncy-Castle
+    implementation("org.bouncycastle:bcprov-jdk15on:$bouncy")
+    implementation("org.bouncycastle:bcpkix-jdk15on:$bouncy")
+    implementation("org.bouncycastle:bctls-jdk15on:$bouncy")
 }
 
 tasks.test {
